@@ -1,6 +1,6 @@
-appId: in.emorphis.hydrationbuddy
+appId: com.vijaycarpenter.hydrationbuddy
 productName: Hydration Buddy
-copyright: Copyright © 2026 Nishant Mahajan
+copyright: Copyright © 2026 Vijay Carpenter
 directories:
   output: release
   buildResources: resources

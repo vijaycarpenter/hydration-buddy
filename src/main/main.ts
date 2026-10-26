@@ -62,7 +62,7 @@ const recentRequests = new Map<string, Result<IntakeEntry>>();
 // Transparent windows on X11 need an ARGB visual.
 if (process.platform === 'linux') app.commandLine.appendSwitch('enable-transparent-visuals');
 // Windows only shows toast notifications for apps with an AppUserModelID (matches appId in electron-builder.yml).
-if (process.platform === 'win32') app.setAppUserModelId('in.emorphis.hydrationbuddy');
+if (process.platform === 'win32') app.setAppUserModelId('com.vijaycarpenter.hydrationbuddy');
 
 // HB_USER_DATA points the app at a separate data folder (testing without touching real data).
 if (process.env.HB_USER_DATA) app.setPath('userData', path.resolve(process.env.HB_USER_DATA));
