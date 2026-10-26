@@ -1,0 +1,45 @@
+appId: in.emorphis.hydrationbuddy
+productName: Hydration Buddy
+copyright: Copyright © 2026 Nishant Mahajan
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist/**
+  - dist-electron/**
+  - resources/**
+  - package.json
+linux:
+  target: [AppImage, deb]
+  executableName: hydration-buddy
+  category: Utility
+  icon: resources/icons
+  synopsis: Friendly water-drinking reminders with an animated companion
+  description: Hydration Buddy reminds you to drink water, tracks your daily goal and shows your progress on a 3D body.
+  desktop:
+    Keywords: water;hydration;reminder;health;
+deb:
+  depends: [libnotify4, libxtst6, libnss3, libgtk-3-0, libasound2, libappindicator3-1 | libayatana-appindicator3-1]
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: resources/icon.ico
+  legalTrademarks: Hydration Buddy
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Hydration Buddy
+  runAfterFinish: true
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  artifactName: Hydration-Buddy-Setup-${version}.${ext}
+portable:
+  artifactName: Hydration-Buddy-${version}-portable.${ext}
+appImage:
+  artifactName: Hydration-Buddy-${version}-${arch}.AppImage

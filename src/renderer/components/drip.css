@@ -1,0 +1,24 @@
+.drip { position: relative; }
+.drip img { position: relative; display: block; user-select: none; pointer-events: none; }
+.drip-shadow {
+  position: absolute; left: 18%; right: 18%; bottom: 0.5%; height: 4%;
+  border-radius: 50%; background: radial-gradient(closest-side, rgba(12, 74, 110, 0.28), transparent);
+}
+
+/* standing: gentle breathing bob */
+.drip-stand img { transform-origin: 50% 100%; animation: drip-breathe 3s ease-in-out infinite; }
+/* happy (after a drink): hops with sparkles */
+.drip-happy img { transform-origin: 50% 100%; animation: drip-hop 0.7s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+.drip-sparkles { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+.drip-happy .drip-sparkles { opacity: 1; }
+.drip-sparkles span { position: absolute; font-size: 22px; animation: drip-twinkle 0.7s ease-in-out infinite alternate; }
+.drip-sparkles span:nth-child(1) { left: 2%; top: 14%; color: #facc15; }
+.drip-sparkles span:nth-child(2) { right: 0; top: 6%; color: #38bdf8; animation-delay: 0.2s; }
+.drip-sparkles span:nth-child(3) { right: 4%; top: 42%; color: #f472b6; animation-delay: 0.35s; }
+.drip-sparkles span:nth-child(4) { left: 6%; top: 46%; color: #34d399; animation-delay: 0.1s; }
+
+.drip-still img, .drip-still .drip-sparkles span { animation: none !important; }
+
+@keyframes drip-breathe { 0%, 100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(-2px) scaleY(1.008); } }
+@keyframes drip-hop { 0%, 100% { transform: translateY(0) scaleY(1); } 15% { transform: translateY(0) scaleY(0.96); } 50% { transform: translateY(-18px) scaleY(1.02); } }
+@keyframes drip-twinkle { from { transform: scale(0.8) rotate(-10deg); opacity: 0.55; } to { transform: scale(1.2) rotate(10deg); opacity: 1; } }
